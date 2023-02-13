@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Index.html",
+      "PackagePath": "staticwebassets\\Index.html"
+    },
+    {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Scripts\\Table.js",
+      "PackagePath": "staticwebassets\\Scripts\\Table.js"
+    },
+    {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Scripts\\virtual-select.min.css",
+      "PackagePath": "staticwebassets\\Scripts\\virtual-select.min.css"
+    },
+    {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Scripts\\virtual-select.min.js",
+      "PackagePath": "staticwebassets\\Scripts\\virtual-select.min.js"
+    },
+    {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\app.js",
+      "PackagePath": "staticwebassets\\app.js"
+    },
+    {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\edit.html",
+      "PackagePath": "staticwebassets\\edit.html"
+    },
+    {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\main.js",
+      "PackagePath": "staticwebassets\\main.js"
+    },
+    {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\multiselect-dropdown.js",
+      "PackagePath": "staticwebassets\\multiselect-dropdown.js"
+    },
+    {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\new.html",
+      "PackagePath": "staticwebassets\\new.html"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.StudentCourseAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.StudentCourseAPI.props",
+      "PackagePath": "build\\StudentCourseAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.StudentCourseAPI.props",
+      "PackagePath": "buildMultiTargeting\\StudentCourseAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.StudentCourseAPI.props",
+      "PackagePath": "buildTransitive\\StudentCourseAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
