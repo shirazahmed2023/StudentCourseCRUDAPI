@@ -20,6 +20,7 @@ E:\My Projects\StudentCourseAPI\TestAPI\bin\Debug\net6.0\Microsoft.TestPlatform.
 E:\My Projects\StudentCourseAPI\TestAPI\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.Common.dll
 E:\My Projects\StudentCourseAPI\TestAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
 E:\My Projects\StudentCourseAPI\TestAPI\bin\Debug\net6.0\NuGet.Frameworks.dll
+E:\My Projects\StudentCourseAPI\TestAPI\bin\Debug\net6.0\WebDriver.Support.dll
 E:\My Projects\StudentCourseAPI\TestAPI\bin\Debug\net6.0\WebDriver.dll
 E:\My Projects\StudentCourseAPI\TestAPI\bin\Debug\net6.0\xunit.abstractions.dll
 E:\My Projects\StudentCourseAPI\TestAPI\bin\Debug\net6.0\xunit.assert.dll

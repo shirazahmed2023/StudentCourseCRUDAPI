@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Index.html"
     },
     {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\PositionStack.html",
+      "PackagePath": "staticwebassets\\PositionStack.html"
+    },
+    {
       "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Scripts\\Table.js",
       "PackagePath": "staticwebassets\\Scripts\\Table.js"
     },

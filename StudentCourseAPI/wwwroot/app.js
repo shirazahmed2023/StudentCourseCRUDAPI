@@ -33,7 +33,7 @@ function CreateStudent(courseIds) {
         url += '&courseIds=' + courseIds[i];
     } 
 
-    
+    //var apiurl = 'https://api.positionstack.com/v1/forward?access_key=2409e1c349dfa6ece33b309941094a0b&query=1600%20Pennsylvania%20Ave%20NW,%20Washington%20DC';
 
     var student = {};
     //|| $('#Cselect').val()) 

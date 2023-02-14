@@ -31,7 +31,7 @@ $(document).ready(function () {
 });
 
 function CreateStudent(courseIds) {
-    debugger;
+   // debugger;
     courseIds = getSelected();
 
     var student = {};
@@ -43,7 +43,7 @@ function CreateStudent(courseIds) {
         student.FatherName = $('#txtFatherName').val();
         student.Address = $('#txtAddress').val();
         student.courses = courseIds;
-        debugger;
+     //   debugger;
 
         if (student) {
             var url = 'api/Students/AddStudentWithCourses?courseIds=' + courseIds[0];
@@ -57,7 +57,8 @@ function CreateStudent(courseIds) {
                 data: JSON.stringify(student),
                 type: "Post",
                 success: function (result) {
-                    console.log(result);                   
+                    console.log(result);
+                    ShowStudent();
                 },
                 error: function (msg) {
                     console.error(msg);

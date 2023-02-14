@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3w6huqULLn3WF5oheuhoUMX9mAbP9O7x8SBlxIhbEzc=",
+  "Hash": "/X0g4Zk58JTmUnDEuLM0mL4R5nrBisN7DOLfBPivxD0=",
   "Source": "StudentCourseAPI",
   "BasePath": "_content/StudentCourseAPI",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\new.html"
+    },
+    {
+      "Identity": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\PositionStack.html",
+      "SourceId": "StudentCourseAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\",
+      "BasePath": "_content/StudentCourseAPI",
+      "RelativePath": "PositionStack.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\PositionStack.html"
     },
     {
       "Identity": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Scripts\\Table.js",
