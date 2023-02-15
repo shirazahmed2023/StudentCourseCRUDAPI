@@ -34,4 +34,8 @@
     <None Include="wwwroot\Index.html" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LoggerService\LoggerService.csproj" />
+  </ItemGroup>
+
 </Project>

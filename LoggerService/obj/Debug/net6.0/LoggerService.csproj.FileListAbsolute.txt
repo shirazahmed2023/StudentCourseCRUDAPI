@@ -1,0 +1,12 @@
+E:\My Projects\StudentCourseAPI\LoggerService\bin\Debug\net6.0\LoggerService.deps.json
+E:\My Projects\StudentCourseAPI\LoggerService\bin\Debug\net6.0\LoggerService.dll
+E:\My Projects\StudentCourseAPI\LoggerService\bin\Debug\net6.0\LoggerService.pdb
+E:\My Projects\StudentCourseAPI\LoggerService\obj\Debug\net6.0\LoggerService.csproj.AssemblyReference.cache
+E:\My Projects\StudentCourseAPI\LoggerService\obj\Debug\net6.0\LoggerService.GeneratedMSBuildEditorConfig.editorconfig
+E:\My Projects\StudentCourseAPI\LoggerService\obj\Debug\net6.0\LoggerService.AssemblyInfoInputs.cache
+E:\My Projects\StudentCourseAPI\LoggerService\obj\Debug\net6.0\LoggerService.AssemblyInfo.cs
+E:\My Projects\StudentCourseAPI\LoggerService\obj\Debug\net6.0\LoggerService.csproj.CoreCompileInputs.cache
+E:\My Projects\StudentCourseAPI\LoggerService\obj\Debug\net6.0\LoggerService.dll
+E:\My Projects\StudentCourseAPI\LoggerService\obj\Debug\net6.0\refint\LoggerService.dll
+E:\My Projects\StudentCourseAPI\LoggerService\obj\Debug\net6.0\LoggerService.pdb
+E:\My Projects\StudentCourseAPI\LoggerService\obj\Debug\net6.0\ref\LoggerService.dll

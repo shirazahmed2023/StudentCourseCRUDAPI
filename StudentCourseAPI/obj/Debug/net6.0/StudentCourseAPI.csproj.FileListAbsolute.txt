@@ -287,3 +287,8 @@ E:\My Projects\StudentCourseAPI\StudentCourseAPI\obj\Debug\net6.0\refint\Student
 E:\My Projects\StudentCourseAPI\StudentCourseAPI\obj\Debug\net6.0\StudentCourseAPI.pdb
 E:\My Projects\StudentCourseAPI\StudentCourseAPI\obj\Debug\net6.0\StudentCourseAPI.genruntimeconfig.cache
 E:\My Projects\StudentCourseAPI\StudentCourseAPI\obj\Debug\net6.0\ref\StudentCourseAPI.dll
+E:\My Projects\StudentCourseAPI\StudentCourseAPI\bin\Debug\net6.0\nlog.config
+E:\My Projects\StudentCourseAPI\StudentCourseAPI\bin\Debug\net6.0\NLog.dll
+E:\My Projects\StudentCourseAPI\StudentCourseAPI\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+E:\My Projects\StudentCourseAPI\StudentCourseAPI\bin\Debug\net6.0\LoggerService.dll
+E:\My Projects\StudentCourseAPI\StudentCourseAPI\bin\Debug\net6.0\LoggerService.pdb

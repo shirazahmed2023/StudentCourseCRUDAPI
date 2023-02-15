@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LoggerService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,17 +16,32 @@ namespace StudentCourseAPI.Controllers
     public class StudentsController : ControllerBase
     {
         private readonly studentContext _context;
+        private readonly ILoggerManager _logger;
 
-        public StudentsController(studentContext context)
+
+        public StudentsController(studentContext context,ILoggerManager logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/Students
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
-            return await _context.Students.ToListAsync();
+            _logger.LogInfo("Getting Students");
+            try
+            {
+                _logger.LogInfo("Returned Student Successfully");
+                return await _context.Students.ToListAsync();
+            }
+            
+            catch(Exception ex)
+            {
+                _logger.LogError($"Error getting students: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError);
+
+            }
         }
 
         // GET: api/Students/5
@@ -88,16 +104,28 @@ namespace StudentCourseAPI.Controllers
         [HttpDelete("DeleteStudent")]
         public async Task<IActionResult> DeleteStudent(int id)
         {
-            var student = await _context.Students.FindAsync(id);
-            if (student == null)
+            _logger.LogInfo("Into Deleting Process");
+            try {
+                var student = await _context.Students.FindAsync(id);
+                if (student == null)
+                {
+                    return NotFound();
+                }
+
+                _context.Students.Remove(student);
+                await _context.SaveChangesAsync();
+                _logger.LogInfo("Deleted Successfully");
+                return NoContent();
+            }
+            catch (Exception ex)
             {
-                return NotFound();
+                _logger.LogError($"Error While Deleting: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError);
+
             }
 
-            _context.Students.Remove(student);
-            await _context.SaveChangesAsync();
 
-            return NoContent();
+
         }
 
         [HttpGet("GetStudentsWithCoursesbyID")]
@@ -131,7 +159,10 @@ namespace StudentCourseAPI.Controllers
         [HttpGet("GetStudentsWithCourses")]
         public ActionResult<object> GetStudentsWithCourses()
         {
-            var StudentsWithCourses = _context.Students
+            _logger.LogInfo("Into Method Get Students");
+            try {
+                _logger.LogInfo("Student Data Have Been Displayed");
+                var StudentsWithCourses = _context.Students
                 .Include(c => c.Studentcourses)
                 .ThenInclude(sc => sc.Course)
                 .Where(c => c.Id == c.Id)
@@ -145,12 +176,22 @@ namespace StudentCourseAPI.Controllers
                 })
                 .ToList();
 
-            if (StudentsWithCourses == null)
+                if (StudentsWithCourses == null)
+                {
+                    return NotFound();
+                }
+                _logger.LogInfo("Student Data Have Been Displayed");
+                return StudentsWithCourses;
+                
+            }
+            catch (Exception ex)
             {
-                return NotFound();
+                _logger.LogError($"Error While Fetching Students: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError);
+
             }
 
-            return StudentsWithCourses;
+
         }
 
 
@@ -159,32 +200,45 @@ namespace StudentCourseAPI.Controllers
             [FromBody] Student student,
             [FromQuery] int[] courseIds)
         {
-
-            // Add the student to the database
-            _context.Students.Add(student);
-            await _context.SaveChangesAsync();
-
-            // Add the courses for the student
-            foreach (var courseId in courseIds)
+            _logger.LogInfo("Process Of Creation Started");
+            try
             {
-                var studentCourse = new Studentcourse
+                // Add the student to the database
+
+                _context.Students.Add(student);
+                await _context.SaveChangesAsync();
+
+                // Add the courses for the student
+                foreach (var courseId in courseIds)
                 {
-                    StudentId = student.Id,
-                    CourseId = courseId
-                };
-                _context.Studentcourses.Add(studentCourse);
+                    var studentCourse = new Studentcourse
+                    {
+                        StudentId = student.Id,
+                        CourseId = courseId
+                    };
+                    _context.Studentcourses.Add(studentCourse);
+                }
+
+                await _context.SaveChangesAsync();
+                _logger.LogInfo("Student Created Successfully!");
+                return CreatedAtAction("GetStudent", new { id = student.Id }, student);
             }
 
-            await _context.SaveChangesAsync();
+            catch (Exception ex)
+            {
+                _logger.LogError($"Creating Controller Not Working: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
 
-            return CreatedAtAction("GetStudent", new { id = student.Id }, student);
         }
 
         [HttpPut("UpdateStudentWithCourses")]
         public async Task<IActionResult> UpdateStudentWithCourses(int id, [FromBody] SModelClass model)
         {
+            _logger.LogInfo("Working on Updation");            
             if (id != model.Student.Id)
             {
+                _logger.LogWarning("Student ID Does not Exists");
                 return BadRequest();
             }
 
@@ -220,12 +274,14 @@ namespace StudentCourseAPI.Controllers
 
             try
             {
+                _logger.LogInfo("Data has been Updated");
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
                 if (!StudentExists(id))
                 {
+                    _logger.LogError("Student id does not matched");
                     return NotFound();
                 }
                 else
@@ -233,7 +289,6 @@ namespace StudentCourseAPI.Controllers
                     throw;
                 }
             }
-
             return NoContent();
         }
 

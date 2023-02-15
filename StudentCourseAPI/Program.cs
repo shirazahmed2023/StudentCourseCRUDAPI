@@ -1,12 +1,17 @@
+using LoggerService;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using NLog;
 using student.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<ILoggerManager, LoggerManager>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
