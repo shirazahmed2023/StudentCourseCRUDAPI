@@ -189,7 +189,7 @@ function ChatGPT() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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",
+            "Authorization": "Bearer YOUR API KEY",
         },
         body: JSON.stringify({
             prompt: message,

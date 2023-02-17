@@ -1,0 +1,27 @@
+Steps :
+Add Connection String  :
+Server=localhost;Database=Northwind;Uid=root;Pwd=root
+
+Packages to install :
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Pomelo.EntityFrameworkCore.MySql
+
+Install & Update dotnet EF tool :
+dotnet tool install --global dotnet-ef
+dotnet tool update --global dotnet-ef
+
+Scaffold MySQL Database :
+dotnet ef dbcontext scaffold Name=NorthwindDB Pomelo.EntityFrameworkCore.MySql --output-dir Models --context-dir Data --namespace Northwind.Models --context-namespace Northwind.Data --context NorthwindContext -f --no-onconfiguring
+dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
+
+"ConnectionStrings": {
+    "studentdb": "Server=localhost;Database=student;Uid=root;Pwd=0984484"
+  }
+
+dotnet ef dbcontext scaffold Name=Studentdb Pomelo.EntityFrameworkCore.MySql --output-dir Models --context-dir Data --namespace student.Models --context-namespace student.Data --context studentContext -f --no-onconfiguring
+builder.Services.AddDbContext<studentContext>(
+    options =>
+    {
+        options.UseMySql(builder.Configuration.GetConnectionString("studentdb"),
+        Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.23-mysql"));
+    });
