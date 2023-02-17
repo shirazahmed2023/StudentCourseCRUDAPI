@@ -292,3 +292,4 @@ E:\My Projects\StudentCourseAPI\StudentCourseAPI\bin\Debug\net6.0\NLog.dll
 E:\My Projects\StudentCourseAPI\StudentCourseAPI\bin\Debug\net6.0\NLog.Extensions.Logging.dll
 E:\My Projects\StudentCourseAPI\StudentCourseAPI\bin\Debug\net6.0\LoggerService.dll
 E:\My Projects\StudentCourseAPI\StudentCourseAPI\bin\Debug\net6.0\LoggerService.pdb
+E:\My Projects\StudentCourseAPI\StudentCourseAPI\bin\Debug\net6.0\System.Web.Cors.dll

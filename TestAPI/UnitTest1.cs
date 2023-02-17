@@ -21,7 +21,7 @@ namespace TestAPI
 
             string id = stdID.Text;
 
-            IWebElement editlink = driver.FindElement(By.XPath(string.Format("/html/body/div/table/tbody/tr[2]/td[6]/button[1]")));
+            IWebElement editlink = driver.FindElement(By.XPath(string.Format("//*[@id=\"edit\"]")));
 
             editlink.Click();
 
@@ -31,15 +31,15 @@ namespace TestAPI
 
             IWebElement editID = driver.FindElement(By.XPath("/html/body/div/div/form/div[1]/table/tbody/tr/td"));
 
-            IWebElement nameInput = driver.FindElement(By.Id("txtName"));
+            IWebElement nameInput = driver.FindElement(By.Id("txtEdName"));
             nameInput.Clear();
             nameInput.SendKeys("Shiraz");
 
-            IWebElement fatherNameInput = driver.FindElement(By.Id("txtFatherName"));
+            IWebElement fatherNameInput = driver.FindElement(By.Id("txtEdFatherName"));
             fatherNameInput.Clear();
             fatherNameInput.SendKeys("Javed");
 
-            IWebElement addressInput = driver.FindElement(By.Id("txtAddress"));
+            IWebElement addressInput = driver.FindElement(By.Id("txtEdAddress"));
             addressInput.Clear();
             addressInput.SendKeys("Dubai");
 

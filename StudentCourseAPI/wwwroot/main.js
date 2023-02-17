@@ -9,11 +9,12 @@ $(document).ready(function () {
     std_id = JSON.parse(localStorage.getItem('studentId'));
     if (std_id != null) {
         EditStudent(std_id);
-       
+        GPTStudent(std_id);
     }
 
+
     $('#updatestd').click(function (e) {
-        debugger;
+       // debugger;
         e.preventDefault();
         if (std_id != '') {
             UpdateStudent(std_id);
@@ -89,7 +90,9 @@ function ShowStudent() {
                                 <td>${result[i].address}</td>
                                 <td>${result[i].course}</td>
                                 <td>
-                                    <button class="btn btn-primary" id="edit" onClick="EditStudentP(${result[i].id})">Edit</button>
+                                    <button class="btn btn-info" id="chatgpt" onClick="ChatGPTP(${result[i].id})">Talk With Chat GPT</button>
+                                    &nbsp&nbsp&nbsp&nbsp
+                                    <button class="btn btn-warning" id="edit" onClick="EditStudentP(${result[i].id})">Edit</button>
                                     &nbsp&nbsp&nbsp&nbsp
                                     <button class="btn btn-danger" onClick="DeleteStudent(${result[i].id})">Delete</button>
                                 </td>
@@ -113,15 +116,15 @@ function EditStudent(i) {
         type: "Get",
         success: function (result) {
             if (result) {
-                debugger;
+               // debugger;
                 $("#edittbl").html('');
                 var row = '';
                 row += '<tr><td>' + result.id + '</td></ tr>';
                 $("#edittbl").append(row);
-                $('#txtID').val(result.id);
-                $('#txtName').val(result.name);
-                $('#txtFatherName').val(result.fatherName);
-                $('#txtAddress').val(result.address);
+                //$('#txtID').val(result.id);
+                $('#txtEdName').val(result.name);
+                $('#txtEdFatherName').val(result.fatherName);
+                $('#txtEdAddress').val(result.address);
 
                 var selectedCourses = [];
                 for (var i = 0; i < result.course.length; i++) {
@@ -150,6 +153,80 @@ function EditStudentP(studentId) {
 }
 
 
+function GPTStudent(i) {
+    var url = 'api/Students/GetStudentsWithCoursesbyID?id=' + i;
+    $.ajax({
+        url: url,
+        contentType: "application/json ; charset = utf-8",
+        dataType: "json",
+        type: "Get",
+        success: function (result) {
+            if (result) {
+              //  debugger;
+                $("#gpttbl").html('');
+                var row = '';
+                row += '<tr><td>' + result.name + '</td></ tr>';
+                $("#gpttbl").append(row);
+            }
+
+        },
+        error: function (msg) {
+            alert(JSON.stringify(msg));
+        }
+    });
+}
+
+
+function ChatGPT() {
+    const table = document.getElementById("gpttbl");
+    const messageInput = document.getElementById("message");
+
+    // Get the user's message input
+    const message = messageInput.value;
+    debugger;
+    // Send a request to the ChatGPT API endpoint
+    fetch("https://api.openai.com/v1/completions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer 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",
+        },
+        body: JSON.stringify({
+            prompt: message,
+            model: "text-davinci-003",
+            max_tokens: 100,
+            n: 1,
+            stop: " \n",
+        }),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.choices && data.choices.length > 0) {
+                // Display the response in the HTML table
+                const row = table.insertRow();
+                const cell = row.insertCell();
+                console.log("Response data:", data);
+                cell.innerHTML = data.choices[0].text;
+            } else {
+                throw new Error('Unexpected API response format');
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    messageInput.value = "";
+}
+
+
+
+
+
+function ChatGPTP(studentId) {
+    localStorage.setItem('studentId', studentId);
+    window.location.href = "https://localhost:7183/Chatgpt.html";
+
+}
+
 
 function UpdateStudent(i) {
     let courses_id = getSelected();
@@ -157,9 +234,9 @@ function UpdateStudent(i) {
     let student = {};
     student.Student = {
         Id: i,
-        Name: $('#txtName').val(),
-        FatherName: $('#txtFatherName').val(),
-        Address: $('#txtAddress').val()
+        Name: $('#txtEdName').val(),
+        FatherName: $('#txtEdFatherName').val(),
+        Address: $('#txtEdAddress').val()
     };
     student.CourseIds = courses_id;
 

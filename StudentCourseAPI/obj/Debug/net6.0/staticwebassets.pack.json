@@ -1,12 +1,16 @@
 {
   "Files": [
     {
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Chatgpt.html",
+      "PackagePath": "staticwebassets\\Chatgpt.html"
+    },
+    {
       "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Index.html",
       "PackagePath": "staticwebassets\\Index.html"
     },
     {
-      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\PositionStack.html",
-      "PackagePath": "staticwebassets\\PositionStack.html"
+      "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Scripts\\Proxy.js",
+      "PackagePath": "staticwebassets\\Scripts\\Proxy.js"
     },
     {
       "Id": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Scripts\\Table.js",

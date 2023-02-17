@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/X0g4Zk58JTmUnDEuLM0mL4R5nrBisN7DOLfBPivxD0=",
+  "Hash": "OQXm5owDAPNEa9H4bxUsPfx5XdijhyLYH1N3pcDiz2s=",
   "Source": "StudentCourseAPI",
   "BasePath": "_content/StudentCourseAPI",
   "Mode": "Default",
@@ -32,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.js"
+    },
+    {
+      "Identity": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Chatgpt.html",
+      "SourceId": "StudentCourseAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\",
+      "BasePath": "_content/StudentCourseAPI",
+      "RelativePath": "Chatgpt.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Chatgpt.html"
     },
     {
       "Identity": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\edit.html",
@@ -119,12 +136,12 @@
       "OriginalItemSpec": "wwwroot\\new.html"
     },
     {
-      "Identity": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\PositionStack.html",
+      "Identity": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Scripts\\Proxy.js",
       "SourceId": "StudentCourseAPI",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\",
       "BasePath": "_content/StudentCourseAPI",
-      "RelativePath": "PositionStack.html",
+      "RelativePath": "Scripts/Proxy.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,7 +150,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\PositionStack.html"
+      "OriginalItemSpec": "wwwroot\\Scripts\\Proxy.js"
     },
     {
       "Identity": "E:\\My Projects\\StudentCourseAPI\\StudentCourseAPI\\wwwroot\\Scripts\\Table.js",
